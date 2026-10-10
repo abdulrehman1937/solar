@@ -3,7 +3,7 @@ app_title = "Solar"
 app_publisher = "Xeuro Tech"
 app_description = "Solar quotations, print formats, and project start"
 app_email = "abdul.rehman@xeurotech.com"
-app_license = "mit"
+app_license = "GNU Affero General Public License (v3)"
 
 # Apps
 # ------------------
