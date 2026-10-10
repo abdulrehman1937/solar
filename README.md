@@ -1,6 +1,8 @@
 ### Solar
 
-Solar quotations, print formats, and project start
+Solar quotation DocTypes, print formats, and the installation flow, moved out of Client Script and Server Script so the same app can be installed on another site.
+
+`solar.start.project` creates the project, site warehouse, material request, sales order, and draft purchase orders. Accounts and warehouses are taken from the company, not from fixed site names.
 
 ### Installation
 

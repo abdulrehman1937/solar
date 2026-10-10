@@ -1,0 +1,33 @@
+{
+ "app": "solar",
+ "creation": "2026-10-10 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Sidebar",
+ "header_icon": "sun",
+ "idx": 0,
+ "items": [
+  {
+   "added": 0,
+   "child": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "icon": "file-text",
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "label": "Solar Quotation",
+   "link_to": "Solar Quotation",
+   "link_type": "DocType",
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-10-10 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Solar",
+ "name": "Solar",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Solar"
+}

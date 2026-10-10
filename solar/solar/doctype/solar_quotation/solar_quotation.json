@@ -1,0 +1,630 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "format:{####} - {client_name} {capacity} {system_type} ",
+ "creation": "2025-01-31 00:30:57.664249",
+ "default_print_format": "Solar Quotation",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "creation_date",
+  "total_quoted_amount",
+  "column_break_ibqk",
+  "client_name",
+  "watts",
+  "section_break_gsbs",
+  "project",
+  "site_warehouse",
+  "material_request",
+  "sales_order",
+  "sales_invoice",
+  "column_break_yrtv",
+  "system_type",
+  "capacity",
+  "net_metering",
+  "light_arrester",
+  "column_break_whbi",
+  "earthing",
+  "battery",
+  "net_metering_charges",
+  "light_arrester_charges",
+  "structure_section",
+  "structure",
+  "structure_panels",
+  "structure_rate",
+  "service_section",
+  "labour_per_watt",
+  "labour_watts",
+  "transport",
+  "panels",
+  "panels_table",
+  "total_panels",
+  "panel_name",
+  "inverters",
+  "inverters_table",
+  "dc_wires",
+  "dc_wires_table",
+  "ac_wire",
+  "ac_wires_table",
+  "distribution_box",
+  "dbs_table",
+  "db_box_quantity",
+  "db_box_rate",
+  "eathing",
+  "earthing_wires_table",
+  "earthing_items_table",
+  "earthing_total_items",
+  "earthing_quantity",
+  "earthing_rate",
+  "column_break_dj86",
+  "column_break_bysm",
+  "battery_item_code",
+  "column_break_krsw",
+  "battery_quantity",
+  "column_break_hqjg",
+  "battery_rate",
+  "misc_section",
+  "miscs_table",
+  "miscs_charges",
+  "additionals_section",
+  "additionals_table",
+  "tab_2_tab",
+  "quotation_table_section",
+  "quotation_table",
+  "terms",
+  "out_of_scope",
+  "suppliers_tab",
+  "solar_installer",
+  "solar_installer_charge",
+  "solar_structure_installer",
+  "solar_structure_charges",
+  "earthing_bor",
+  "earthing_bore_supplier",
+  "net_meter_charges",
+  "net_meter_supplier",
+  "green_meter_charges",
+  "green_meter_supplier"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_quoted_amount",
+   "fieldtype": "Currency",
+   "label": "Total Quoted Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ibqk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "client_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client Name",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "watts",
+   "fieldtype": "Int",
+   "label": "Watts",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gsbs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "site_warehouse",
+   "fieldtype": "Link",
+   "label": "Site Warehouse",
+   "options": "Warehouse",
+   "read_only": 1,
+   "description": "Client site. Material is transferred here in steps and issued to the project when the job is closed."
+  },
+  {
+   "fieldname": "material_request",
+   "fieldtype": "Link",
+   "label": "Material Request",
+   "options": "Material Request",
+   "read_only": 1,
+   "description": "Store items to send to the site. Each trip is a separate stock transfer."
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "read_only": 1,
+   "description": "One line for the quoted system. Payments can be recorded against it."
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1,
+   "description": "Income for this project. Submit it to book the profit. Parts are not on this invoice."
+  },
+  {
+   "fieldname": "column_break_yrtv",
+   "fieldtype": "Section Break",
+   "label": "System"
+  },
+  {
+   "fieldname": "system_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "System Type",
+   "options": "Ongrid\nHybrid\nLocal\nOffGrid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Capacity",
+   "precision": "2"
+  },
+  {
+   "default": "Yes",
+   "fieldname": "net_metering",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Net Metering",
+   "options": "Yes\nNo",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "default": "No",
+   "fieldname": "light_arrester",
+   "fieldtype": "Select",
+   "label": "Light Arrester",
+   "options": "Yes\nNo",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_whbi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Yes",
+   "fieldname": "earthing",
+   "fieldtype": "Select",
+   "label": "Earthing",
+   "options": "Yes\nNo",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "default": "No",
+   "fieldname": "battery",
+   "fieldtype": "Select",
+   "label": "Battery",
+   "options": "Yes\nNo",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "default": "110000",
+   "depends_on": "eval:doc.net_metering===\"Yes\"",
+   "fieldname": "net_metering_charges",
+   "fieldtype": "Currency",
+   "label": "Net Metering with Green Meter Charges",
+   "mandatory_depends_on": "eval:doc.net_metering===\"Yes\"",
+   "print_hide": 1
+  },
+  {
+   "default": "19000",
+   "depends_on": "eval:doc.light_arrester===\"Yes\"",
+   "fieldname": "light_arrester_charges",
+   "fieldtype": "Currency",
+   "label": "Light Arrester Charges",
+   "mandatory_depends_on": "eval:doc.net_metering===\"Yes\"",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "structure_section",
+   "fieldtype": "Section Break",
+   "label": "Structure",
+   "print_hide": 1
+  },
+  {
+   "default": "Customised",
+   "fieldname": "structure",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Structure",
+   "options": "No\nCustomised\nL2/L3",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.structure!==\"No\"",
+   "fieldname": "structure_panels",
+   "fieldtype": "Int",
+   "label": "Panels",
+   "mandatory_depends_on": "eval: doc.structure!==\"No\"",
+   "non_negative": 1
+  },
+  {
+   "default": "7500",
+   "depends_on": "eval: doc.structure!==\"No\"",
+   "fieldname": "structure_rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "mandatory_depends_on": "eval: doc.structure!==\"No\"",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "service_section",
+   "fieldtype": "Section Break",
+   "label": "Service",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "labour_per_watt",
+   "fieldtype": "Float",
+   "label": "Labour Per Watt",
+   "reqd": 1
+  },
+  {
+   "fieldname": "labour_watts",
+   "fieldtype": "Int",
+   "label": "Total Watts for Labour",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transport",
+   "fieldtype": "Currency",
+   "label": "Transport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "panels",
+   "fieldtype": "Section Break",
+   "label": "Panels",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "panels_table",
+   "fieldtype": "Table",
+   "options": "Solar Quotation Panel Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_panels",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total Panels",
+   "show_on_timeline": 1
+  },
+  {
+   "fieldname": "panel_name",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "Panel Name",
+   "show_on_timeline": 1
+  },
+  {
+   "fieldname": "inverters",
+   "fieldtype": "Section Break",
+   "label": "Inverters",
+   "print_hide": 1
+  },
+  {
+   "default": "[{\"item_code\":\"Goodwe 10KW G3\",\"quantity\":1,\"rate\":210000,\"include_in_total\":true,\"total\":210000}\n]",
+   "fieldname": "inverters_table",
+   "fieldtype": "Table",
+   "options": "Solar Quotation Inverter Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dc_wires",
+   "fieldtype": "Section Break",
+   "label": "DC Wires",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "dc_wires_table",
+   "fieldtype": "Table",
+   "options": "Solar Quotation DC Wire Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ac_wire",
+   "fieldtype": "Section Break",
+   "label": "AC Wire",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "ac_wires_table",
+   "fieldtype": "Table",
+   "options": "Solar Quotation AC Wire Item"
+  },
+  {
+   "fieldname": "distribution_box",
+   "fieldtype": "Section Break",
+   "label": "Distribution Box",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "dbs_table",
+   "fieldtype": "Table",
+   "options": "Solar Quotation DB Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "db_box_quantity",
+   "fieldtype": "Int",
+   "label": "DB Box Quantity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "db_box_rate",
+   "fieldtype": "Currency",
+   "label": "Db Box Rate",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.earthing===\"Yes\"",
+   "fieldname": "eathing",
+   "fieldtype": "Section Break",
+   "label": "Eathing",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "earthing_wires_table",
+   "fieldtype": "Table",
+   "label": "Earthing Wire",
+   "options": "Solar Quotation Earthing Wire",
+   "reqd": 1
+  },
+  {
+   "fieldname": "earthing_items_table",
+   "fieldtype": "Table",
+   "label": "Earthing Items",
+   "options": "Solar Quotation Earthing Item",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "earthing_total_items",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "earthing_quantity",
+   "fieldtype": "Int",
+   "label": "Eathing Quantity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "earthing_rate",
+   "fieldtype": "Currency",
+   "label": "Earthing Rate",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.battery===\"Yes\"",
+   "fieldname": "column_break_dj86",
+   "fieldtype": "Section Break",
+   "label": "Battery",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_bysm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "battery_item_code",
+   "fieldtype": "Link",
+   "label": "Battery",
+   "mandatory_depends_on": "eval:doc.battery===\"Yes\"",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_krsw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "battery_quantity",
+   "fieldtype": "Int",
+   "label": "Quantity",
+   "mandatory_depends_on": "eval:doc.battery===\"Yes\""
+  },
+  {
+   "fieldname": "column_break_hqjg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "battery_rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "mandatory_depends_on": "eval:doc.battery===\"Yes\""
+  },
+  {
+   "fieldname": "misc_section",
+   "fieldtype": "Section Break",
+   "label": "Misc.",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "miscs_table",
+   "fieldtype": "Table",
+   "options": "Solar Quotation Misc Item"
+  },
+  {
+   "fieldname": "miscs_charges",
+   "fieldtype": "Int",
+   "label": "Per Panel Charges",
+   "reqd": 1
+  },
+  {
+   "fieldname": "additionals_section",
+   "fieldtype": "Section Break",
+   "label": "Additionals"
+  },
+  {
+   "fieldname": "additionals_table",
+   "fieldtype": "Table",
+   "options": "Quotation Table"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "PDF"
+  },
+  {
+   "fieldname": "quotation_table_section",
+   "fieldtype": "Section Break",
+   "label": "Quotation Table"
+  },
+  {
+   "fieldname": "quotation_table",
+   "fieldtype": "Table",
+   "options": "Quotation Table"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "Table",
+   "label": "Terms & Conditions",
+   "options": "Solar Quotation TC",
+   "print_width": "150 mm",
+   "reqd": 1,
+   "width": "150 mm"
+  },
+  {
+   "fieldname": "out_of_scope",
+   "fieldtype": "Table",
+   "label": "Out of Scope",
+   "options": "Solar Quotation TC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "suppliers_tab",
+   "fieldtype": "Tab Break",
+   "label": "Suppliers"
+  },
+  {
+   "fieldname": "solar_installer",
+   "fieldtype": "Link",
+   "label": "Solar Installer",
+   "mandatory_depends_on": "eval:doc.solar_installer_charge",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "solar_installer_charge",
+   "fieldtype": "Currency",
+   "label": "Solar Installer Charges (per watt)"
+  },
+  {
+   "fieldname": "solar_structure_installer",
+   "fieldtype": "Link",
+   "label": "Solar Structure Installer",
+   "mandatory_depends_on": "eval:doc.solar_structure_charges",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "solar_structure_charges",
+   "fieldtype": "Currency",
+   "label": "Solar Structure Charges Per Plate"
+  },
+  {
+   "fieldname": "earthing_bor",
+   "fieldtype": "Currency",
+   "label": "Price per Earthing Bor"
+  },
+  {
+   "fieldname": "earthing_bore_supplier",
+   "fieldtype": "Link",
+   "label": "Earthing Bor Supplier",
+   "mandatory_depends_on": "eval:doc.earthing_bor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "net_meter_charges",
+   "fieldtype": "Currency",
+   "label": "Net Meter Processing Charges"
+  },
+  {
+   "fieldname": "net_meter_supplier",
+   "fieldtype": "Link",
+   "label": "Net metering Processing Supplier",
+   "mandatory_depends_on": "eval:doc.net_meter_charges                      ",
+   "options": "Supplier",
+   "read_only_depends_on": "                        "
+  },
+  {
+   "fieldname": "green_meter_charges",
+   "fieldtype": "Currency",
+   "label": "Green Meter Charges (both if applicable)"
+  },
+  {
+   "fieldname": "green_meter_supplier",
+   "fieldtype": "Link",
+   "label": "Green Meter Supplier",
+   "mandatory_depends_on": "eval:doc.green_meter_charges",
+   "options": "Supplier"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-09 15:44:08.596605",
+ "modified_by": "abdul.rehman@rmctraders.pk",
+ "module": "Solar",
+ "name": "Solar Quotation",
+ "naming_rule": "Expression (old style)",
+ "owner": "abdul.rehman@rmctraders.pk",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_name_in_global_search": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
